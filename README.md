@@ -20,3 +20,7 @@ omnihealth/
 - **Medical Triage & Disclaimer**: Clear disclaimers that AI does not replace direct physician diagnosis.
 - **Lead Capture & Booking**: Collects patient name, country/phone, preferred date, treatment interest, and symptoms/notes.
 - **Automation Pipeline**: Trigger webhook to CRM/n8n/Google Sheets upon booking confirmation.
+
+---
+*Environment: Configured for local development on Home PC.*
+
