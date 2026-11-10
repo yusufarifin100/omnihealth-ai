@@ -1,0 +1,17 @@
+{
+  "event": "patient_consultation_booked",
+  "timestamp": "2026-11-10T12:00:00Z",
+  "source": "OmniHealth_AI_Concierge",
+  "channel": "voice_call",
+  "patient_data": {
+    "patient_name": "Sarah Jenkins",
+    "phone": "+1-415-555-2671",
+    "email": "sarah.j@example.com",
+    "treatment": "E-Max Porcelain Veneers",
+    "preferred_date": "2026-12-05",
+    "notes": "Patient wants 16 veneers. Asking if hotel accommodation can be bundled with clinic transport."
+  },
+  "assigned_specialist": "Dr. Aris Thorne, DDS",
+  "estimated_budget_usd": 4500,
+  "crm_status": "NEW_INQUIRY_PENDING_COORDINATOR_CALL"
+}
