@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniHealth International - Medical Concierge & Clinic</title>
+  <meta name="description" content="JCI-Accredited Medical Concierge Clinic in Bangkok & Istanbul. Advanced Dental Veneers, LASIK Surgery, and Executive Health Checkups.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --secondary: #0f172a;
+      --accent: #10b981;
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --bg-light: #f8fafc;
+      --white: #ffffff;
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      color: var(--text-main);
+      background-color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Top Notice Bar */
+    .top-bar {
+      background: var(--secondary);
+      color: #94a3b8;
+      font-size: 0.82rem;
+      padding: 0.5rem 1.5rem;
+      text-align: center;
+    }
+    .top-bar span {
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    /* Navigation */
+    header {
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--secondary);
+      text-decoration: none;
+    }
+    .logo-badge {
+      background: linear-gradient(135deg, var(--primary), #38bdf8);
+      color: white;
+      padding: 0.25rem 0.6rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    .btn-header {
+      background: var(--primary);
+      color: white !important;
+      padding: 0.6rem 1.25rem;
+      border-radius: 9999px;
+      font-weight: 600 !important;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+    .btn-header:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4.5rem 1.5rem 3.5rem;
+      background: radial-gradient(circle at top right, #e0f2fe 0%, #ffffff 60%);
+      text-align: center;
+    }
+    .hero-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-size: 2.75rem;
+      line-height: 1.2;
+      color: var(--secondary);
+      font-weight: 800;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, #0284c7, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 2rem;
+    }
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      padding: 0.85rem 1.75rem;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+    .btn-secondary {
+      background: white;
+      color: var(--secondary);
+      padding: 0.85rem 1.75rem;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid #cbd5e1;
+    }
+
+    /* Trust Stats */
+    .trust-section {
+      max-width: 1000px;
+      margin: 2rem auto 4rem;
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      text-align: center;
+      background: var(--white);
+      border-radius: 16px;
+      border: 1px solid #f1f5f9;
+      box-shadow: var(--card-shadow);
+    }
+    .trust-item h3 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--secondary);
+    }
+    .trust-item p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Treatments Section */
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .section-title h2 {
+      font-size: 2rem;
+      color: var(--secondary);
+      font-weight: 800;
+    }
+    .section-title p {
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    .treatments-grid {
+      max-width: 1200px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: var(--white);
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+    }
+    .card-tag {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+    .card h3 {
+      font-size: 1.35rem;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .card-price {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .card-price .amount {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .card-price .us-compare {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      text-decoration: line-through;
+    }
+    .card-price .savings {
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 700;
+      display: block;
+      margin-top: 0.2rem;
+    }
+    .card-meta {
+      list-style: none;
+      font-size: 0.85rem;
+      color: var(--text-main);
+      margin-bottom: 1.5rem;
+    }
+    .card-meta li {
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Concierge Banner */
+    .concierge-banner {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+      padding: 4rem 1.5rem;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .concierge-banner h2 {
+      font-size: 2.1rem;
+      margin-bottom: 1rem;
+    }
+    .concierge-banner p {
+      color: #94a3b8;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid #e2e8f0;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: #f8fafc;
+    }
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    Global Medical Tourism Partner &bull; Official Affiliate with <span>PlacidWay Global Network</span> &bull; JCI Accredited
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-badge">OmniHealth</span> AI Concierge
+      </a>
+      <ul class="nav-links">
+        <li><a href="#treatments">Treatments</a></li>
+        <li><a href="#specialists">Specialists</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="https://github.com/yusufarifin100/omnihealth-ai" target="_blank">GitHub Repo</a></li>
+        <li><a href="javascript:void(0)" onclick="openVoiceflowChat()" class="btn-header">Chat with Maya AI</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="badge-pill">
+        ✨ 24/7 Voice & Chat Patient Concierge
+      </div>
+      <h1>World-Class Medical Care at <span>70% Lower Cost</span></h1>
+      <p>Consult with elite European & American-trained specialists in Bangkok and Istanbul. Get instant procedure pricing, travel itineraries, and direct doctor bookings.</p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="openVoiceflowChat()">
+          💬 Talk to Maya (AI Concierge)
+        </button>
+        <a href="#treatments" class="btn-secondary">Explore Medical Packages</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Stats -->
+  <section class="trust-section">
+    <div class="trust-item">
+      <h3>JCI</h3>
+      <p>Gold Seal Accreditation</p>
+    </div>
+    <div class="trust-item">
+      <h3>70% - 80%</h3>
+      <p>Savings vs US/EU Healthcare</p>
+    </div>
+    <div class="trust-item">
+      <h3>4 Languages</h3>
+      <p>English, Spanish, ID & Arabic</p>
+    </div>
+    <div class="trust-item">
+      <h3>VIP Transfer</h3>
+      <p>Complimentary Airport & Hotel</p>
+    </div>
+  </section>
+
+  <!-- Treatments -->
+  <section id="treatments">
+    <div class="section-title">
+      <h2>Popular International Medical Packages</h2>
+      <p>Transparent all-inclusive packages with zero hidden fees</p>
+    </div>
+
+    <div class="treatments-grid">
+      <!-- Dental Veneers -->
+      <div class="card">
+        <div>
+          <span class="card-tag">Cosmetic Dentistry</span>
+          <h3>E-Max Porcelain Veneers</h3>
+          <p>Full Hollywood smile makeover with custom 3D digital smile design.</p>
+          <div class="card-price">
+            <span class="amount">$4,200 - $4,800</span>
+            <span class="us-compare">$22,000 in US</span>
+            <span class="savings">Save up to 78%</span>
+          </div>
+          <ul class="card-meta">
+            <li>✓ Full set of 16 porcelain teeth</li>
+            <li>✓ Lead Specialist: Dr. Aris Thorne, DDS</li>
+            <li>✓ 5-7 days turnaround with VIP car pickup</li>
+          </ul>
+        </div>
+        <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="openVoiceflowChat()">
+          Inquire Pricing with Maya
+        </button>
+      </div>
+
+      <!-- LASIK Eye Surgery -->
+      <div class="card">
+        <div>
+          <span class="card-tag">Ophthalmology</span>
+          <h3>Femto-LASIK Vision Correction</h3>
+          <p>Bladeless precision laser treatment for myopia and astigmatism.</p>
+          <div class="card-price">
+            <span class="amount">$1,650</span>
+            <span class="us-compare">$4,500 in US</span>
+            <span class="savings">Save up to 65%</span>
+          </div>
+          <ul class="card-meta">
+            <li>✓ Both eyes treated in single 15-min session</li>
+            <li>✓ Lead Specialist: Dr. Elena Vance, MD</li>
+            <li>✓ 24-48 hours quick recovery period</li>
+          </ul>
+        </div>
+        <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="openVoiceflowChat()">
+          Inquire LASIK with Maya
+        </button>
+      </div>
+
+      <!-- Executive Checkup -->
+      <div class="card">
+        <div>
+          <span class="card-tag">Preventive Medicine</span>
+          <h3>Executive Gold Health Screening</h3>
+          <p>Comprehensive 45+ biomarker audit, ultrasound, ECG, and doctor report.</p>
+          <div class="card-price">
+            <span class="amount">$450</span>
+            <span class="us-compare">$2,800 in US</span>
+            <span class="savings">Save up to 84%</span>
+          </div>
+          <ul class="card-meta">
+            <li>✓ Complete metabolic & organ ultrasound</li>
+            <li>✓ English medical dossier within 24 hours</li>
+            <li>✓ 1-on-1 specialist consultation included</li>
+          </ul>
+        </div>
+        <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="openVoiceflowChat()">
+          Inquire Screening with Maya
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Concierge Banner -->
+  <section class="concierge-banner">
+    <h2>Meet Maya — Your 24/7 AI Patient Concierge</h2>
+    <p>Have questions about doctor schedules, hotel accommodations, or medical visas? Click the chat bubble in the bottom right to talk with Maya in real time.</p>
+    <button class="btn-primary" onclick="openVoiceflowChat()">
+      Start Free Consultation Chat
+    </button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 OmniHealth International Concierge. Designed as an AI Simulation for PlacidWay Medical Tourism Network.</p>
+    <p style="margin-top: 0.5rem;">
+      <a href="https://github.com/yusufarifin100/omnihealth-ai" target="_blank">View GitHub Source Code & System Prompt</a> &bull;
+      <a href="javascript:void(0)" onclick="openVoiceflowChat()">Launch Voiceflow Chatbot</a>
+    </p>
+  </footer>
+
+  <!-- Voiceflow Widget Script -->
+  <script type="text/javascript">
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+          window.voiceflow.chat.load({
+            verify: { projectID: '6af2b42e563951b23a89711e' },
+            url: 'https://general-runtime.voiceflow.com',
+            version: {
+              url: 'https://runtime-api.voiceflow.com'
+            }
+          });
+        };
+        v.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs'; 
+        v.type = 'text/javascript'; 
+        s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+
+    function openVoiceflowChat() {
+      if (window.voiceflow && window.voiceflow.chat) {
+        window.voiceflow.chat.open();
+      }
+    }
+  </script>
+</body>
+</html>
