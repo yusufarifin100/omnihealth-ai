@@ -498,9 +498,9 @@
         var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
         v.onload = function() {
           window.voiceflow.chat.load({
-            verify: { projectID: '6af2b42e563951b23a89711e' },
+            verify: { projectID: '6af2b42e563961b23a89711e' },
             url: 'https://general-runtime.voiceflow.com',
-            version: {
+            voice: {
               url: 'https://runtime-api.voiceflow.com'
             }
           });
@@ -514,18 +514,16 @@
       if (window.voiceflow && window.voiceflow.chat && typeof window.voiceflow.chat.open === 'function') {
         window.voiceflow.chat.open();
       } else {
-        // If script is still initializing, poll for up to 3 seconds
         let attempts = 0;
         const interval = setInterval(() => {
           attempts++;
           if (window.voiceflow && window.voiceflow.chat && typeof window.voiceflow.chat.open === 'function') {
             window.voiceflow.chat.open();
             clearInterval(interval);
-          } else if (attempts > 15) {
+          } else if (attempts > 20) {
             clearInterval(interval);
-            alert("Maya AI widget is connecting to Voiceflow servers... Please check your internet connection or make sure your Voiceflow agent is Published to Production.");
           }
-        }, 200);
+        }, 150);
       }
     }
   </script>
