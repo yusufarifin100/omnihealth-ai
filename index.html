@@ -511,8 +511,21 @@
     })(document, 'script');
 
     function openVoiceflowChat() {
-      if (window.voiceflow && window.voiceflow.chat) {
+      if (window.voiceflow && window.voiceflow.chat && typeof window.voiceflow.chat.open === 'function') {
         window.voiceflow.chat.open();
+      } else {
+        // If script is still initializing, poll for up to 3 seconds
+        let attempts = 0;
+        const interval = setInterval(() => {
+          attempts++;
+          if (window.voiceflow && window.voiceflow.chat && typeof window.voiceflow.chat.open === 'function') {
+            window.voiceflow.chat.open();
+            clearInterval(interval);
+          } else if (attempts > 15) {
+            clearInterval(interval);
+            alert("Maya AI widget is connecting to Voiceflow servers... Please check your internet connection or make sure your Voiceflow agent is Published to Production.");
+          }
+        }, 200);
       }
     }
   </script>
