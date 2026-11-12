@@ -2,7 +2,7 @@
 
 OmniHealth AI is an autonomous 24/7 patient concierge and intake agent designed for international healthcare and medical tourism platforms (modeled after the PlacidWay Global Network standard). It assists prospective global patients with medical procedure inquiries, upfront package cost estimates, doctor availability, and consultation bookings across accredited clinics in Bangkok and Istanbul.
 
-🌐 **Live Website:** [https://yusufarifin100.github.io/omnihealth-ai/](https://yusufarifin100.github.io/omnihealth-ai/)
+🌐 **Live Website:** [https://omnihealth-ai-id.vercel.app](https://omnihealth-ai-id.vercel.app)
 
 ---
 
