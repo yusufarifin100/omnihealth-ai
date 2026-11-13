@@ -2,8 +2,7 @@
 
 OmniHealth AI is a 24/7 autonomous patient concierge and intake assistant. It helps prospective patients inquire about medical packages, upfront pricing, and doctor availability in Bangkok and Istanbul, while capturing consultation bookings directly into Google Sheets in real time.
 
-🌐 **Live Website:** [https://omnihealth-ai-id.vercel.app](https://omnihealth-ai-id.vercel.app)  
-📁 **Repository:** [https://github.com/yusufarifin100/omnihealth-ai](https://github.com/yusufarifin100/omnihealth-ai)
+🌐 **Live Website:** [https://omnihealth-ai-id.vercel.app](https://omnihealth-ai-id.vercel.app)
 
 ---
 
@@ -19,8 +18,9 @@ flowchart LR
 ---
 
 ## 💻 Tech Stack
-* **Conversational AI / Voice Engine:** Voiceflow (Agentic Architecture, Tool Calling, Deepgram STT, ElevenLabs TTS)
-* **LLM Engine:** Voiceflow Flash 4.2 / OpenAI GPT-4o-mini
+* **Conversational AI Platform:** Voiceflow (Agentic Architecture & Tool Calling)
+* **LLM Engine:** Voiceflow Flash 4.2
+* **Voice & Speech:** Deepgram (Speech-to-Text) & ElevenLabs (Voice Synthesis)
 * **Frontend:** Vanilla HTML5, CSS3, Vanilla JS
 * **Cloud Hosting:** Vercel
 * **Automation & CRM Integration:** Google Apps Script, Google Sheets
