@@ -15,30 +15,13 @@ International medical tourism requires prompt qualification: patients considerin
 
 ---
 
-## 🔄 Conversation & System Flowchart
+## 🔄 System Flowchart
 
 ```mermaid
-flowchart TD
-    Start([Patient starts Chat or Voice Call]) --> Greet[Greeting & Intent Discovery]
-    Greet --> Inquiry{Patient Question Type}
-    
-    Inquiry -->|Procedure & Pricing| PriceInfo[Explain Package, Pricing, Recovery & Inclusions]
-    Inquiry -->|Doctor & Scheduling| DocInfo[Explain Specialist Credentials & Available Days]
-    Inquiry -->|General Medical Tourism| TourismInfo[Explain Travel, Hotel, Airport Transfer]
-
-    PriceInfo --> BookingPitch[Offer Free Telehealth or Clinic Consultation]
-    DocInfo --> BookingPitch
-    TourismInfo --> BookingPitch
-
-    BookingPitch --> Intake{Patient Wants to Book?}
-    Intake -->|Yes| CollectData[Collect: Name, Phone/WhatsApp, Email, Date, Treatment]
-    Intake -->|Hesitant / Later| SoftClose[Offer to send brochure via WhatsApp/Email]
-    
-    CollectData --> Confirmation[Read back confirmation & inform coordinator will reach out]
-    Confirmation --> WebhookTrigger[Trigger Webhook: submit_booking_to_sheets]
-    SoftClose --> WebhookTrigger
-
-    WebhookTrigger --> Sheets[(Google Sheets CRM / 24/7 Cloud Pipeline)]
+flowchart LR
+    User([User / Patient]) -->|Chat / Voice Inquiry & Booking| Maya[Maya - Voiceflow AI Agent]
+    Maya -->|Triggers Webhook: submit_booking_to_sheets| Script[Google Apps Script]
+    Script -->|Append Row Real-Time| Sheets[(Google Sheets CRM)]
 ```
 
 ---
@@ -50,6 +33,3 @@ flowchart TD
 * **Cloud Hosting:** Vercel (Auto-deploy on Git push via Edge CDN)
 * **Automation & CRM Integration:** Google Apps Script Serverless Webhooks, Google Sheets 24/7 Cloud Pipeline, n8n / Make.com Webhook Specification
 * **API & Backend Specifications:** FastAPI (`webhooks/server.py`), JSON Schemas (`webhooks/sample_payload.json`)
-
----
-*Created by [Ahmad Yusuf Arifin](https://github.com/yusufarifin100) for PlacidWay AI Medical Tourism Intake Assistant.*
